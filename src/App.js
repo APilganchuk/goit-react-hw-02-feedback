@@ -13,14 +13,8 @@ class App extends Component {
     bad: 0,
   };
 
-  handleGood = () => {
-    this.setState({ good: this.state.good + 1 });
-  };
-  handleNeutral = () => {
-    this.setState({ neutral: this.state.neutral + 1 });
-  };
-  handleBad = () => {
-    this.setState({ bad: this.state.bad + 1 });
+  handleFeedback = (option) => {
+    this.setState({ [option]: this.state[option] + 1 });
   };
 
   countTotalFeedback() {
@@ -38,13 +32,12 @@ class App extends Component {
   }
   render() {
     const { good, neutral, bad } = this.state;
-    
+
     return (
       <Section title="Please leave feedback">
         <FeedbackOptions
-          good={this.handleGood}
-          neutral={this.handleNeutral}
-          bad={this.handleBad}
+          options={Object.keys(this.state)}
+          onLeaveFeedback={this.handleFeedback}
         />
         <Statistics
           good={good}
