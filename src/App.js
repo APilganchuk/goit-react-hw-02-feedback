@@ -1,12 +1,17 @@
 import { Component } from "react";
 import Statistics from "./components/Statistics";
 import FeedbackOptions from "./components/FeedbackOptions";
+import PropTypes from "prop-types";
 
 import Section from "./components/Section";
 
 class App extends Component {
-  static defaultProps = {};
-  static propTypes = {};
+  static defaultProps = {
+    option: "",
+  };
+  static propTypes = {
+    option: PropTypes.string,
+  };
   state = {
     good: 0,
     neutral: 0,
