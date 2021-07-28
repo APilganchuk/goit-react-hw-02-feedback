@@ -32,7 +32,7 @@ class App extends Component {
     const goodFeedback = this.state.good;
     const totalFeedback = this.countTotalFeedback();
 
-    const positiveFeedback = ((goodFeedback / totalFeedback) * 100).toFixed(2);
+    const positiveFeedback = ((goodFeedback / totalFeedback) * 100).toFixed();
     return positiveFeedback;
   }
   render() {
